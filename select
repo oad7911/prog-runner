@@ -1,0 +1,80 @@
+package com.omt.main;
+
+
+
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+
+
+
+
+
+public class Select implements IRun{
+	Robot robo;
+	
+	public void pressKey(int keyEvent){
+		robo.keyPress(keyEvent);
+		robo.keyRelease(keyEvent);
+	}
+	
+	public void delay(int amount){
+		for(int i = 0; i < amount / 10; i++){
+			//robo.delay(10);
+			//robo.mouseMove(100, 100);
+		}
+	}
+	
+	public Select(){
+		try {
+			robo = new Robot();
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) {
+		Select fun = new Select();
+		ArrayList<Integer> keys = new ArrayList<Integer>();
+		keys.add(KeyEvent.VK_ENTER);
+		keys.add(KeyEvent.VK_ENTER);
+		keys.add(KeyEvent.VK_ENTER);
+		keys.add(KeyEvent.VK_ENTER);
+		keys.add(KeyEvent.VK_SPACE);
+		keys.add(KeyEvent.VK_ENTER);
+		keys.add(KeyEvent.VK_ENTER);
+		
+		
+		
+		
+		
+		
+		for(int i = 0; i < keys.size(); i++){
+			int key = keys.get(i);
+			
+			fun.robo.mouseMove(1500, 1500);
+			if (i == -1){
+				fun.delay(8000);
+			}
+			
+			
+			
+			
+			
+			else{
+				fun.pressKey(key);
+				
+				
+			
+			
+			}
+		}
+		
+		
+		
+		
+	}
+}
