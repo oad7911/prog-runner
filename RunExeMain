@@ -1,0 +1,27 @@
+package com.omt.main;
+ 
+import java.io.IOException;
+
+ 
+public class RunExeMain implements IRun {
+ 
+    //This is Example that display how to run exe using java
+    public static void main(String args[])
+    {
+        String filePath = "C:/Users/owen/Downloads/blbp.exe";
+        try {
+ 
+            Process p = Runtime.getRuntime().exec(filePath);
+ 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+ 
+    }
+
+   class Select {
+
+    	
+
+	}
+}
